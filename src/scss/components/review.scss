@@ -1,0 +1,146 @@
+.page {
+  &__review {
+    background-color: #fff;
+    position: relative;
+  }
+}
+.review {
+  &__container {
+  }
+
+  &__title {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: rem(780);
+    gap: rem(8);
+    padding-bottom: rem(36);
+  }
+
+  &__logo {
+  }
+
+  &__big {
+    text-align: center;
+  }
+
+  &__text {
+  }
+  &__descriptions {
+    margin: 0 auto;
+    margin-top: rem(79);
+    position: relative;
+    max-width: rem(980);
+    background: linear-gradient(90deg, #cd1a40 0%, #ff803c 100%);
+    padding: rem(38) rem(37);
+    @include media-mx(767) {
+      padding: rem(20) rem(20);
+    }
+    @include media-mx(425) {
+      padding: rem(10) rem(10);
+    }
+    @include adaptiveClamp("margin-top", 79, 10, 1400, 767, 1);
+    &:after {
+      content: "";
+      background: url(../../images/review/triangle.svg) no-repeat;
+      position: absolute;
+      top: 100%;
+      left: 60%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__quotes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -30px;
+    left: 40px;
+    @include media-mx(767) {
+      width: 30px;
+      top: -10px;
+      left: 20px;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__description {
+    color: #fff;
+    text-align: center;
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: rem(26);
+  }
+
+  &__profile {
+    padding-top: rem(36);
+    padding-bottom: rem(76);
+  }
+}
+.profile {
+  display: flex;
+  gap: rem(36);
+  justify-content: center;
+  align-items: center;
+  @include media-mx(1000) {
+    gap: rem(15);
+    justify-content: space-around;
+  }
+  @include media-mx(420) {
+    gap: rem(5);
+  }
+  &__image-ibg {
+    width: rem(80);
+    height: rem(80);
+    @include media-mx(767) {
+      width: rem(50);
+      height: rem(50);
+    }
+    @include media-mx(420) {
+      width: rem(40);
+      height: rem(40);
+    }
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include media-mx(800) {
+      max-width: rem(100);
+    }
+    @include media-mx(767) {
+      max-width: rem(200);
+    }
+    @include media-mx(550) {
+      display: none;
+    }
+  }
+
+  &__name {
+    color: #1e1e1e;
+    font-size: rem(24);
+    font-weight: 500;
+    @include media-mx(767) {
+      font-size: rem(16);
+    }
+  }
+
+  &__country {
+    color: #1e1e1e;
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: rem(26);
+    @include media-mx(767) {
+      font-size: rem(14);
+    }
+  }
+}
