@@ -10,16 +10,6 @@
   background: linear-gradient(90deg, #cd1a40 0%, #ff803c 100%);
   &__container {
     position: relative;
-    //&:before {
-    // content: "";
-    // position: absolute;
-    // background: url(../../images/form/building.png) no-repeat;
-    // bottom: 0;
-    // left: 0;
-
-    // height: rem(692);
-    // width: rem(566);
-    // }
   }
   &__image-ibg {
     position: absolute;
@@ -76,35 +66,36 @@
   }
   &__email {
     display: flex;
+    height: 74px;
 
     input {
-      width: 100%;
+      flex: 1 1 100%;
+      height: 100%;
       font-size: rem(16);
       line-height: rem(26);
-      padding: rem(24) 0;
       padding-left: rem(26);
-      //padding-right: rem(214);
       background-color: rgba(255, 255, 255, 0.2);
       @include media-mx(768) {
-        padding: rem(18) 0;
         padding-left: rem(18);
       }
       @include media-mx(350) {
-        padding: rem(10);
+        padding-left: rem(10);
       }
+      @include styled-placeholder(#fff);
     }
   }
   &__arrow {
+    flex: 0 0 80px;
+    height: 100%;
     background-color: #fff;
-    padding: rem(24) rem(26);
     display: flex;
     justify-content: center;
     align-items: center;
-    @include media-mx(768) {
-      padding: rem(18) rem(18);
-    }
-    @include media-mx(350) {
-      padding: rem(10);
-    }
+   // @include media-mx(768) {
+   //   padding: rem(18) rem(18);
+   // }
+   // @include media-mx(350) {
+    //  padding: rem(10);
+   // }
   }
 }
