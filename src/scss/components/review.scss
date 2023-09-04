@@ -80,6 +80,9 @@
   &__profile {
     padding-top: rem(36);
     padding-bottom: rem(76);
+    @include media-mx(767) {
+      padding-bottom: rem(36);
+    }
   }
 }
 .profile {
