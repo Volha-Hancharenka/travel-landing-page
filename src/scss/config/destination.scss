@@ -1,0 +1,129 @@
+.page__destination {
+  background-color: #fff;
+  position: relative;
+}
+
+.desti {
+  &__container {
+  }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: rem(36);
+  }
+
+  &__logo {
+  }
+
+  &__big {
+  }
+
+  &__travel {
+    padding-bottom: rem(36);
+    @include media-mx(425) {
+      padding-bottom: rem(30);
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    padding: rem(19) rem(20);
+  }
+}
+.travel {
+  display: grid;
+  gap: rem(20);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 306px);
+  @include media-mx(1000) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 306px);
+  }
+  @include media-mx(767) {
+    grid-template-rows: repeat(2, 250px);
+    gap: rem(10);
+  }
+  @include media-mx(500) {
+    grid-template-rows: repeat(2, 150px);
+  }
+  &__item {
+    //display: flex;
+    //object-fit: cover;
+    position: relative;
+    z-index: 1;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(30, 30, 30, 0.56);
+      z-index: 2;
+    }
+    &_big {
+      grid-column: 1/3;
+      grid-row: 1/3;
+      @include media-mx(1000) {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+    }
+    &_small-one {
+      grid-column: 3/4;
+      grid-row: 1/2;
+      @include media-mx(1000) {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+    }
+    &_small-two {
+      grid-column: 4/5;
+      @include media-mx(1000) {
+        grid-column: 1/2;
+      }
+    }
+    &_small-big {
+      grid-column: 3/5;
+      grid-row: 2/3;
+      @include media-mx(1000) {
+        grid-column: 2/3;
+      }
+    }
+  }
+  &__image-ibg {
+    height: 100%;
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+    z-index: 3;
+  }
+
+  &__title {
+    color: #fff;
+    font-family: 'WaterBrush';
+    font-size: rem(46);
+    font-weight: 400;
+    @include media-mx(500){
+      font-size: rem(26);
+    }
+  }
+
+  &__button {
+    padding: rem(16) rem(17);
+    margin: 0 auto;
+    text-wrap: nowrap;
+    @include media-mx(500){
+      padding: rem(10) rem(10);
+      font-size: rem(10);
+    }
+  }
+}

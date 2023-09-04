@@ -1,0 +1,89 @@
+.page {
+  &__pack {
+    background-color: #fff;
+    position: relative;
+  }
+}
+.pack {
+  &__container {
+  }
+
+  &__title {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: rem(780);
+    gap: rem(8);
+    padding-bottom: rem(36);
+  }
+
+  &__logo {
+  }
+
+  &__big {
+  }
+
+  &__text {
+  }
+
+  &__tour {
+  }
+}
+.tour {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap:rem(24);
+  @include media-mx(767){
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  }
+ 
+  &__item {
+    height:rem(412);
+    display: flex;
+   flex-direction: column;
+   background: #FFF9F0;
+   border-radius: rem(6);
+  }
+
+  &__image-ibg {
+   height: 100%;
+    
+    img{
+      border-radius: rem(6);
+    }
+  }
+
+  &__about {
+    display: flex;
+    padding: rem(20) rem(22);
+    align-items: center;
+    //flex: 1 1 auto;
+  }
+
+  &__country {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    color: #1e1e1e;
+    font-size: rem(24);
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &__trip {
+    color: #1e1e1e;
+    font-size: rem(16);
+    font-weight: 300;
+  }
+
+  &__money {
+    color: #1e1e1e;
+    font-size: rem(16);
+    font-weight: 600;
+    margin-left: auto;
+  }
+}

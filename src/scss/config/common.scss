@@ -1,0 +1,38 @@
+// Заголовки, общие БЄМ блоки и проче...
+.title-logo {
+  color: #cd1a40;
+  font-family: "WaterBrush";
+  font-size: rem(46);
+  font-weight: 400;
+  padding-bottom: rem(8);
+  padding-top: rem(76);
+  @include adaptiveClamp("font-size", 46, 25, 767, 375, 1);
+  @include adaptiveClamp("padding-top", 76, 30, 900, 320, 1);
+}
+.title-big {
+  color: #1e1e1e;
+  font-family: "WorkSans";
+  font-size: rem(64);
+  font-weight: 200;
+  text-transform: uppercase;
+  @include adaptiveClamp("font-size", 64, 35, 767, 375, 1);
+}
+.title-text {
+  font-size: rem(16);
+  font-weight: 400;
+  line-height: rem(26);
+  text-align: center;
+}
+.button {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #cd1a40 0%, #ff803c 100%);
+  box-shadow: 0px 5px 10px 0px rgba(205, 26, 64, 0.22);
+  &:hover,
+  &:focus {
+    transform: translateY(rem(+2));
+  }
+}

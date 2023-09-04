@@ -1,0 +1,48 @@
+.page {
+  &__photo {
+    background-color: #fff;
+    position: relative;
+  }
+}
+.photo {
+  &__container {
+  }
+
+  &__title {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: rem(780);
+    gap: rem(8);
+    padding-bottom: rem(36);
+  }
+
+  &__logo {
+  }
+
+  &__big {
+  }
+
+  &__text {
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: rem(20);
+    @include media-mx (767){
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: rem(10);
+    }
+  }
+
+  &__image-ibg {
+   height: 480px;
+   @include media-mx (767){
+    height: 200px;
+  }
+   
+  }
+}

@@ -1,0 +1,160 @@
+.header {
+  width: 100%;
+  transition: background-color var(--bs-transition);
+  z-index: 50;
+  //background-color: black;
+  position: fixed;
+
+  .header-is-sticky & {
+    // ..стили для липкого хедера
+    position: fixed;
+    background-color: rgb(11, 11, 11, 0.9);
+    // background: url(./../images/promo/background.jpg) no-repeat bottom;
+  }
+
+  // .header__container
+  &__container {
+    height: rem($headerHeight);
+    display: flex;
+    align-items: center;
+    @include media-mx(768){
+      height:rem(100);
+    }
+    @include media-mx(425){
+      height:rem(70);
+    }
+
+    .header-is-sticky & {
+      height: rem($headerHeight - 50);
+    }
+  }
+
+  &__logo {
+  }
+
+  &__menu {
+    padding-left: rem(165);
+    @include adaptiveClamp("padding-left", 165, 50, 1350, 1024, 1);
+  }
+  &__buttons {
+    margin-left: auto;
+    display: flex;
+    gap: rem(60);
+    @include adaptiveClamp("gap", 60, 20, 1150, 1024, 1);
+  }
+}
+.logo {
+  font-size: rem(35);
+  color: #ee1c45;
+  font-weight: 400;
+  font-family:'ClickerScript';
+  @include adaptiveClamp("font-size", 35, 20, 1024, 768, 1);
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+
+  &__list {
+    display: flex;
+    gap: rem(50);
+    @include adaptiveClamp("gap", 50, 20, 1024, 768, 1);
+  }
+
+  &__item {
+    font-weight: 300;
+    
+    &:hover,
+    &:focus {
+      transform: translateY(rem(+2));
+    }
+  }
+
+  &__link {
+    color: #ffffff;
+  }
+}
+.buttons {
+  &__link {
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+
+    &_one {
+      text-decoration: underline;
+      color: #ffffff;
+      &:hover,
+      &:focus {
+        transform: translateY(rem(+2));
+        color: #cd1a40;
+      }
+    }
+
+    &_two {
+      width: rem(100);
+      height: rem(48);
+      padding: rem(16) rem(25);
+      border-radius: 18px;
+      background: linear-gradient(90deg, #cd1a40 0%, #ff803c 100%);
+      box-shadow: 0px 5px 10px 0px rgba(205, 26, 64, 0.22);
+      &:hover,
+      &:focus {
+        transform: translateY(rem(+2));
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.icon-menu {
+  display: none;
+
+  @include media-mx(768) {
+    display: block;
+    position: relative;
+    width: rem(30);
+    height: rem(18);
+    cursor: pointer;
+    z-index: 5;
+
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 300ms ease 0ms;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: rem(2);
+      background-color: #000;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    span {
+      top: calc(50% - rem(1));
+    }
+
+    .menu-open & {
+      span {
+        width: 0;
+      }
+
+      &::before {
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
