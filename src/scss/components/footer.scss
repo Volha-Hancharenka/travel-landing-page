@@ -96,12 +96,25 @@
     color: #fff;
     font-size: rem(18);
     font-weight: 300;
+    max-width: rem(332);
     &:hover,
     &:focus {
       transform: translateY(rem(+2));
       text-decoration: underline;
     }
     @include adaptiveClamp("font-size", 18, 15, 768, 425, 1);
+    @include media-mx(1200){
+      max-width: rem(200);
+    }
+    @include media-mx(1000){
+      max-width: rem(332);
+    }
+    @include media-mx(767){
+      max-width: rem(200);
+    }
+    @include media-mx(500){
+      max-width: rem(332);
+    }
   }
 
   &__icons {
