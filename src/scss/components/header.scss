@@ -41,6 +41,13 @@
     display: flex;
     gap: rem(60);
     @include adaptiveClamp("gap", 60, 20, 1150, 1024, 1);
+    @include media-mx(768) {
+    margin-right: rem(30);
+    gap: rem(10);
+    }
+     @include media-mx(425) {
+    margin-right: rem(20);
+    }
   }
 }
 .logo {
@@ -50,10 +57,17 @@
   font-family:'ClickerScript';
   @include adaptiveClamp("font-size", 35, 20, 1024, 768, 1);
 }
+.menu-open & {
+  right: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
 .menu {
   display: flex;
   flex-direction: row;
-
+  @include media-mx(768) {
+  display: none;
+  }
   &__list {
     display: flex;
     gap: rem(50);
@@ -79,6 +93,9 @@
     color: #ffffff;
     display: flex;
     align-items: center;
+    @include media-mx(425) {
+      font-size:rem(12);
+    }
 
     &_one {
       text-decoration: underline;
@@ -91,7 +108,7 @@
     }
 
     &_two {
-      width: rem(100);
+      
       height: rem(48);
       padding: rem(16) rem(25);
       border-radius: 18px;
@@ -101,6 +118,12 @@
       &:focus {
         transform: translateY(rem(+2));
         text-decoration: underline;
+      }
+      @include media-mx(767) {
+       
+      height: rem(30);
+      padding: rem(10) rem(10);
+      border-radius: 30px;
       }
     }
   }
@@ -113,7 +136,7 @@
     display: block;
     position: relative;
     width: rem(30);
-    height: rem(18);
+    height: rem(25);
     cursor: pointer;
     z-index: 5;
 
