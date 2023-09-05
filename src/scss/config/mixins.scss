@@ -133,14 +133,31 @@
 
 // !styled placeholder for TextArea
 @mixin styled-placeholder($color, $fontSize: inherit, $lineHeight: normal) {
-  &:-moz-placeholder,
-  &::-moz-placeholder,
-  &::-webkit-input-placeholder,
-  &:-ms-input-placeholder {
+  &::-webkit-input-placeholder {
     color: $color;
     font-size: $fontSize;
     line-height: $lineHeight;
   }
+  &::-moz-placeholder {
+      color: $color;
+      font-size: $fontSize;
+      line-height: $lineHeight;
+    }
+  &:-ms-input-placeholder {
+      color: $color;
+      font-size: $fontSize;
+      line-height: $lineHeight;
+    }
+  &::-ms-input-placeholder {
+      color: $color;
+      font-size: $fontSize;
+      line-height: $lineHeight;
+    }
+  &::placeholder {
+      color: $color;
+      font-size: $fontSize;
+      line-height: $lineHeight;
+    }
 }
 
 // !плавное убирание placeholder

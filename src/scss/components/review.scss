@@ -2,6 +2,8 @@
   &__review {
     background-color: #fff;
     position: relative;
+    padding-bottom: rem(150);
+    @include adaptiveClamp("padding-bottom", 150, 0, 1100, 900, 1);
   }
 }
 .review {

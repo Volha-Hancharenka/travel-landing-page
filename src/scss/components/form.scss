@@ -1,7 +1,5 @@
 .page {
   &__form {
-    margin-top: rem(150);
-    @include adaptiveClamp("margin-top", 150, 0, 1100, 900, 1);
   }
 }
 .form {
@@ -38,6 +36,7 @@
     padding-bottom: rem(90);
     padding-top: rem(90);
     @include adaptiveClamp("max-width", 580, 350, 1200, 768, 1);
+
     @include media-mx(767) {
       padding-top: rem(45);
       padding-bottom: rem(45);
@@ -75,6 +74,7 @@
       padding-left: rem(26);
       padding-right: rem(10);
       background-color: rgba(255, 255, 255, 0.2);
+      border: 1px solid transparent;
       @include media-mx(768) {
         padding-left: rem(18);
       }
@@ -82,6 +82,14 @@
         padding-left: rem(10);
       }
       @include styled-placeholder(#fff);
+      &:hover,
+      &:focus {
+        transform: translateX(rem(-2));
+        box-shadow: 0 0 3px 0 rgb(rgb(0, 0, 0), 30%);
+        border: 1px solid #fff;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
     }
   }
   &__arrow {
@@ -91,11 +99,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   // @include media-mx(768) {
-   //   padding: rem(18) rem(18);
-   // }
-   // @include media-mx(350) {
+    &:hover,
+    &:focus {
+      transform: translateX(rem(+2));
+    }
+    // @include media-mx(768) {
+    //   padding: rem(18) rem(18);
+    // }
+    // @include media-mx(350) {
     //  padding: rem(10);
-   // }
+    // }
   }
 }
